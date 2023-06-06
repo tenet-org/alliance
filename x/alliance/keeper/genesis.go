@@ -108,6 +108,7 @@ func (k Keeper) ExportGenesis(ctx sdk.Context) *types.GenesisState {
 		RewardDelayTime:       k.RewardDelayTime(ctx),
 		TakeRateClaimInterval: k.RewardClaimInterval(ctx),
 		LastTakeRateClaimTime: k.LastRewardClaimTime(ctx),
+		TakeRateReceiver:      k.TakeRateReceiver(ctx).String(),
 	}
 
 	return &state

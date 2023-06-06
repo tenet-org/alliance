@@ -864,11 +864,13 @@ func TestClaimTakeRate(t *testing.T) {
 	ctx = ctx.WithBlockTime(startTime)
 	ctx = ctx.WithBlockHeight(1)
 	takeRateInterval := time.Minute * 5
+	feeCollectorAddr := app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName)
 	app.AllianceKeeper.InitGenesis(ctx, &types.GenesisState{
 		Params: types.Params{
 			RewardDelayTime:       time.Minute * 60,
 			TakeRateClaimInterval: takeRateInterval,
 			LastTakeRateClaimTime: startTime,
+			TakeRateReceiver:      feeCollectorAddr.String(),
 		},
 		Assets: []types.AllianceAsset{
 			types.NewAllianceAsset(AllianceDenom, sdk.NewDec(2), sdk.ZeroDec(), sdk.NewDec(5), sdk.MustNewDecFromStr("0.5"), startTime),
@@ -877,7 +879,6 @@ func TestClaimTakeRate(t *testing.T) {
 	})
 
 	// Accounts
-	feeCollectorAddr := app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName)
 	delegations := app.StakingKeeper.GetAllDelegations(ctx)
 	valAddr1, err := sdk.ValAddressFromBech32(delegations[0].ValidatorAddress)
 	require.NoError(t, err)
@@ -960,6 +961,7 @@ func TestClaimTakeRateToZero(t *testing.T) {
 			RewardDelayTime:       time.Minute * 60,
 			TakeRateClaimInterval: takeRateInterval,
 			LastTakeRateClaimTime: startTime,
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{
 			asset,
@@ -1008,6 +1010,7 @@ func TestClaimTakeRateForNewlyAddedAssets(t *testing.T) {
 			RewardDelayTime:       time.Minute * 60,
 			TakeRateClaimInterval: takeRateInterval,
 			LastTakeRateClaimTime: startTime,
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{
 			types.NewAllianceAsset(AllianceDenom, sdk.NewDec(2), sdk.ZeroDec(), sdk.ZeroDec(), sdk.ZeroDec(), startTime),
@@ -1099,6 +1102,7 @@ func TestRewardWeightRateChange(t *testing.T) {
 			RewardDelayTime:       time.Minute * 60,
 			TakeRateClaimInterval: takeRateInterval,
 			LastTakeRateClaimTime: startTime,
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{
 			alliance,

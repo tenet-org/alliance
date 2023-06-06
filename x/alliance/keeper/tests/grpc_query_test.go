@@ -276,6 +276,7 @@ func TestClaimQueryReward(t *testing.T) {
 			RewardDelayTime:       time.Minute * 60,
 			TakeRateClaimInterval: time.Minute * 5,
 			LastTakeRateClaimTime: startTime,
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{
 			{

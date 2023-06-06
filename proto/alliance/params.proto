@@ -24,6 +24,10 @@ message Params {
     (gogoproto.nullable) = false,
     (gogoproto.stdtime) = true
   ];
+
+  string take_rate_receiver = 4  [
+    (cosmos_proto.scalar) = "cosmos.AddressString"
+  ];
 }
 
 message RewardHistory {
