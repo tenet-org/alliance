@@ -770,6 +770,7 @@ func (app *App) BlockedModuleAccountAddrs() map[string]bool {
 	modAccAddrs := app.ModuleAccountAddrs()
 	delete(modAccAddrs, authtypes.NewModuleAddress(govtypes.ModuleName).String())
 	delete(modAccAddrs, authtypes.NewModuleAddress(alliancemoduletypes.ModuleName).String())
+	delete(modAccAddrs, authtypes.NewModuleAddress(authtypes.FeeCollectorName).String())
 
 	return modAccAddrs
 }

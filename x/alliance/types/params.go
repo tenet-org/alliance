@@ -2,6 +2,8 @@ package types
 
 import (
 	"fmt"
+	"github.com/cosmos/cosmos-sdk/types"
+	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"time"
 
 	"golang.org/x/exp/slices"
@@ -13,6 +15,7 @@ var (
 	RewardDelayTime       = []byte("RewardDelayTime")
 	TakeRateClaimInterval = []byte("TakeRateClaimInterval")
 	LastTakeRateClaimTime = []byte("LastTakeRateClaimTime")
+	TakeRateReceiver      = []byte("TakeRateReceiver")
 )
 
 var _ paramtypes.ParamSet = (*Params)(nil)
@@ -22,6 +25,7 @@ func (p *Params) ParamSetPairs() paramtypes.ParamSetPairs {
 		paramtypes.NewParamSetPair(RewardDelayTime, &p.RewardDelayTime, validatePositiveDuration),
 		paramtypes.NewParamSetPair(TakeRateClaimInterval, &p.TakeRateClaimInterval, validatePositiveDuration),
 		paramtypes.NewParamSetPair(LastTakeRateClaimTime, &p.LastTakeRateClaimTime, validateTime),
+		paramtypes.NewParamSetPair(TakeRateReceiver, &p.TakeRateReceiver, validateTakeRateReceiver),
 	}
 }
 
@@ -44,12 +48,24 @@ func validateTime(i interface{}) error {
 	return nil
 }
 
+func validateTakeRateReceiver(i interface{}) error {
+	_, ok := i.(string)
+	if !ok {
+		return fmt.Errorf("invalid parameter type: %T", i)
+	}
+
+	_, err := types.AccAddressFromBech32(i.(string))
+
+	return err
+}
+
 // NewParams creates a new Params instance
 func NewParams() Params {
 	return Params{
 		RewardDelayTime:       time.Hour * 24 * 7,
 		TakeRateClaimInterval: time.Minute * 5,
 		LastTakeRateClaimTime: time.Time{},
+		TakeRateReceiver:      authtypes.NewModuleAddress(authtypes.FeeCollectorName).String(),
 	}
 }
 

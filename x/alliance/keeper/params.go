@@ -18,6 +18,22 @@ func (k Keeper) RewardClaimInterval(ctx sdk.Context) (res time.Duration) {
 	return
 }
 
+func (k Keeper) TakeRateReceiver(ctx sdk.Context) (res sdk.AccAddress) {
+	var str string
+	k.paramstore.Get(ctx, types.TakeRateReceiver, &str)
+	res, err := sdk.AccAddressFromBech32(str)
+	if err != nil {
+		panic(err)
+	}
+
+	return res
+}
+
+func (k Keeper) SetTakeRateReceiver(ctx sdk.Context, addr sdk.AccAddress) {
+	str := addr.String()
+	k.paramstore.Set(ctx, types.TakeRateReceiver, &str)
+}
+
 func (k Keeper) LastRewardClaimTime(ctx sdk.Context) (res time.Time) {
 	k.paramstore.Get(ctx, types.LastTakeRateClaimTime, &res)
 	return

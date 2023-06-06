@@ -1,6 +1,7 @@
 package tests_test
 
 import (
+	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"testing"
 	"time"
 
@@ -21,6 +22,7 @@ func TestGenesis(t *testing.T) {
 			RewardDelayTime:       time.Duration(1000000),
 			TakeRateClaimInterval: time.Duration(1000000),
 			LastTakeRateClaimTime: time.Unix(0, 0).UTC(),
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{
 			types.NewAllianceAsset("stake", sdk.NewDec(1), sdk.ZeroDec(), sdk.NewDec(2), sdk.ZeroDec(), ctx.BlockTime()),
@@ -59,6 +61,7 @@ func TestExportAndImportGenesis(t *testing.T) {
 			RewardDelayTime:       time.Duration(1000000),
 			TakeRateClaimInterval: time.Duration(1000000),
 			LastTakeRateClaimTime: time.Unix(0, 0).UTC(),
+			TakeRateReceiver:      app.AccountKeeper.GetModuleAddress(authtypes.FeeCollectorName).String(),
 		},
 		Assets: []types.AllianceAsset{},
 	})
