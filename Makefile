@@ -118,7 +118,7 @@ lint: format-tools
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "*.pb.go" -not -path "*pb.gw.go" | xargs gofumpt -d
 
 lint-docker:
-	docker run --rm -v $(PWD):/app -w /app golangci/golangci-lint:v1.52.2-alpine golangci-lint run
+	docker run --rm -v $(PWD):/app -w /app golangci/golangci-lint:v1.52.2-alpine golangci-lint run --timeout 10m
 
 format: format-tools
 	find . -name '*.go' -type f -not -path "./vendor*" -not -path "*.git*" -not -path "*.pb.go" -not -path "*pb.gw.go" | xargs gofumpt -w
@@ -133,6 +133,10 @@ PROTO_BUILDER_IMAGE=ghcr.io/cosmos/proto-builder
 proto-gen:
 	@echo "Generating Protobuf files"
 	$(DOCKER) run --rm -v $(CURDIR):/workspace --workdir /workspace $(PROTO_BUILDER_IMAGE) sh ./scripts/protocgen.sh
+
+buf-push:
+	@echo "Pushing protobuf files to buf registry"
+	cd proto && buf push
 
 ###############################################################################
 ###                                Local Testnet (docker)                   ###

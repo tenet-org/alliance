@@ -4,91 +4,112 @@
 
 ## Table of Contents
 
-- [alliance/params.proto](#alliance/params.proto)
-    - [Params](#alliance.Params)
-    - [RewardHistory](#alliance.RewardHistory)
+- [alliance/alliance/params.proto](#alliance/alliance/params.proto)
+    - [Params](#alliance.alliance.Params)
+    - [RewardHistory](#alliance.alliance.RewardHistory)
   
-- [alliance/alliance.proto](#alliance/alliance.proto)
-    - [AllianceAsset](#alliance.AllianceAsset)
-    - [RewardWeightChangeSnapshot](#alliance.RewardWeightChangeSnapshot)
-    - [RewardWeightRange](#alliance.RewardWeightRange)
+- [alliance/alliance/alliance.proto](#alliance/alliance/alliance.proto)
+    - [AllianceAsset](#alliance.alliance.AllianceAsset)
+    - [RewardWeightChangeSnapshot](#alliance.alliance.RewardWeightChangeSnapshot)
+    - [RewardWeightRange](#alliance.alliance.RewardWeightRange)
   
-- [alliance/delegations.proto](#alliance/delegations.proto)
-    - [AllianceValidatorInfo](#alliance.AllianceValidatorInfo)
-    - [Delegation](#alliance.Delegation)
-    - [QueuedRedelegation](#alliance.QueuedRedelegation)
-    - [QueuedUndelegation](#alliance.QueuedUndelegation)
-    - [Redelegation](#alliance.Redelegation)
-    - [Undelegation](#alliance.Undelegation)
+- [alliance/alliance/delegations.proto](#alliance/alliance/delegations.proto)
+    - [AllianceValidatorInfo](#alliance.alliance.AllianceValidatorInfo)
+    - [Delegation](#alliance.alliance.Delegation)
+    - [QueuedUndelegation](#alliance.alliance.QueuedUndelegation)
+    - [Undelegation](#alliance.alliance.Undelegation)
   
-- [alliance/events.proto](#alliance/events.proto)
-    - [ClaimAllianceRewardsEvent](#alliance.ClaimAllianceRewardsEvent)
-    - [DelegateAllianceEvent](#alliance.DelegateAllianceEvent)
-    - [RedelegateAllianceEvent](#alliance.RedelegateAllianceEvent)
-    - [UndelegateAllianceEvent](#alliance.UndelegateAllianceEvent)
+- [alliance/alliance/events.proto](#alliance/alliance/events.proto)
+    - [ClaimAllianceRewardsEvent](#alliance.alliance.ClaimAllianceRewardsEvent)
+    - [DeductAllianceAssetsEvent](#alliance.alliance.DeductAllianceAssetsEvent)
+    - [DelegateAllianceEvent](#alliance.alliance.DelegateAllianceEvent)
+    - [RedelegateAllianceEvent](#alliance.alliance.RedelegateAllianceEvent)
+    - [UndelegateAllianceEvent](#alliance.alliance.UndelegateAllianceEvent)
   
-- [alliance/genesis.proto](#alliance/genesis.proto)
-    - [GenesisState](#alliance.GenesisState)
-    - [RedelegationState](#alliance.RedelegationState)
-    - [RewardWeightChangeSnapshotState](#alliance.RewardWeightChangeSnapshotState)
-    - [UndelegationState](#alliance.UndelegationState)
-    - [ValidatorInfoState](#alliance.ValidatorInfoState)
+- [alliance/alliance/redelegations.proto](#alliance/alliance/redelegations.proto)
+    - [QueuedRedelegation](#alliance.alliance.QueuedRedelegation)
+    - [Redelegation](#alliance.alliance.Redelegation)
+    - [RedelegationEntry](#alliance.alliance.RedelegationEntry)
   
-- [alliance/gov.proto](#alliance/gov.proto)
-    - [MsgCreateAllianceProposal](#alliance.MsgCreateAllianceProposal)
-    - [MsgDeleteAllianceProposal](#alliance.MsgDeleteAllianceProposal)
-    - [MsgUpdateAllianceProposal](#alliance.MsgUpdateAllianceProposal)
+- [alliance/alliance/genesis.proto](#alliance/alliance/genesis.proto)
+    - [GenesisState](#alliance.alliance.GenesisState)
+    - [RedelegationState](#alliance.alliance.RedelegationState)
+    - [RewardWeightChangeSnapshotState](#alliance.alliance.RewardWeightChangeSnapshotState)
+    - [UndelegationState](#alliance.alliance.UndelegationState)
+    - [ValidatorInfoState](#alliance.alliance.ValidatorInfoState)
   
-- [alliance/query.proto](#alliance/query.proto)
-    - [DelegationResponse](#alliance.DelegationResponse)
-    - [QueryAllAllianceValidatorsRequest](#alliance.QueryAllAllianceValidatorsRequest)
-    - [QueryAllAlliancesDelegationsRequest](#alliance.QueryAllAlliancesDelegationsRequest)
-    - [QueryAllianceDelegationRequest](#alliance.QueryAllianceDelegationRequest)
-    - [QueryAllianceDelegationResponse](#alliance.QueryAllianceDelegationResponse)
-    - [QueryAllianceDelegationRewardsRequest](#alliance.QueryAllianceDelegationRewardsRequest)
-    - [QueryAllianceDelegationRewardsResponse](#alliance.QueryAllianceDelegationRewardsResponse)
-    - [QueryAllianceRequest](#alliance.QueryAllianceRequest)
-    - [QueryAllianceResponse](#alliance.QueryAllianceResponse)
-    - [QueryAllianceValidatorRequest](#alliance.QueryAllianceValidatorRequest)
-    - [QueryAllianceValidatorResponse](#alliance.QueryAllianceValidatorResponse)
-    - [QueryAllianceValidatorsResponse](#alliance.QueryAllianceValidatorsResponse)
-    - [QueryAlliancesDelegationByValidatorRequest](#alliance.QueryAlliancesDelegationByValidatorRequest)
-    - [QueryAlliancesDelegationsRequest](#alliance.QueryAlliancesDelegationsRequest)
-    - [QueryAlliancesDelegationsResponse](#alliance.QueryAlliancesDelegationsResponse)
-    - [QueryAlliancesRequest](#alliance.QueryAlliancesRequest)
-    - [QueryAlliancesResponse](#alliance.QueryAlliancesResponse)
-    - [QueryIBCAllianceDelegationRequest](#alliance.QueryIBCAllianceDelegationRequest)
-    - [QueryIBCAllianceDelegationRewardsRequest](#alliance.QueryIBCAllianceDelegationRewardsRequest)
-    - [QueryIBCAllianceRequest](#alliance.QueryIBCAllianceRequest)
-    - [QueryParamsRequest](#alliance.QueryParamsRequest)
-    - [QueryParamsResponse](#alliance.QueryParamsResponse)
+- [alliance/alliance/gov.proto](#alliance/alliance/gov.proto)
+    - [MsgCreateAllianceProposal](#alliance.alliance.MsgCreateAllianceProposal)
+    - [MsgDeleteAllianceProposal](#alliance.alliance.MsgDeleteAllianceProposal)
+    - [MsgUpdateAllianceProposal](#alliance.alliance.MsgUpdateAllianceProposal)
   
-    - [Query](#alliance.Query)
+- [alliance/alliance/unbonding.proto](#alliance/alliance/unbonding.proto)
+    - [UnbondingDelegation](#alliance.alliance.UnbondingDelegation)
   
-- [alliance/tx.proto](#alliance/tx.proto)
-    - [MsgClaimDelegationRewards](#alliance.MsgClaimDelegationRewards)
-    - [MsgClaimDelegationRewardsResponse](#alliance.MsgClaimDelegationRewardsResponse)
-    - [MsgDelegate](#alliance.MsgDelegate)
-    - [MsgDelegateResponse](#alliance.MsgDelegateResponse)
-    - [MsgRedelegate](#alliance.MsgRedelegate)
-    - [MsgRedelegateResponse](#alliance.MsgRedelegateResponse)
-    - [MsgUndelegate](#alliance.MsgUndelegate)
-    - [MsgUndelegateResponse](#alliance.MsgUndelegateResponse)
+- [alliance/alliance/query.proto](#alliance/alliance/query.proto)
+    - [DelegationResponse](#alliance.alliance.DelegationResponse)
+    - [QueryAllAllianceValidatorsRequest](#alliance.alliance.QueryAllAllianceValidatorsRequest)
+    - [QueryAllAlliancesDelegationsRequest](#alliance.alliance.QueryAllAlliancesDelegationsRequest)
+    - [QueryAllianceDelegationRequest](#alliance.alliance.QueryAllianceDelegationRequest)
+    - [QueryAllianceDelegationResponse](#alliance.alliance.QueryAllianceDelegationResponse)
+    - [QueryAllianceDelegationRewardsRequest](#alliance.alliance.QueryAllianceDelegationRewardsRequest)
+    - [QueryAllianceDelegationRewardsResponse](#alliance.alliance.QueryAllianceDelegationRewardsResponse)
+    - [QueryAllianceRedelegationsRequest](#alliance.alliance.QueryAllianceRedelegationsRequest)
+    - [QueryAllianceRedelegationsResponse](#alliance.alliance.QueryAllianceRedelegationsResponse)
+    - [QueryAllianceRequest](#alliance.alliance.QueryAllianceRequest)
+    - [QueryAllianceResponse](#alliance.alliance.QueryAllianceResponse)
+    - [QueryAllianceUnbondingsByDenomAndDelegatorRequest](#alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorRequest)
+    - [QueryAllianceUnbondingsByDenomAndDelegatorResponse](#alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorResponse)
+    - [QueryAllianceUnbondingsRequest](#alliance.alliance.QueryAllianceUnbondingsRequest)
+    - [QueryAllianceUnbondingsResponse](#alliance.alliance.QueryAllianceUnbondingsResponse)
+    - [QueryAllianceValidatorRequest](#alliance.alliance.QueryAllianceValidatorRequest)
+    - [QueryAllianceValidatorResponse](#alliance.alliance.QueryAllianceValidatorResponse)
+    - [QueryAllianceValidatorsResponse](#alliance.alliance.QueryAllianceValidatorsResponse)
+    - [QueryAlliancesDelegationByValidatorRequest](#alliance.alliance.QueryAlliancesDelegationByValidatorRequest)
+    - [QueryAlliancesDelegationsRequest](#alliance.alliance.QueryAlliancesDelegationsRequest)
+    - [QueryAlliancesDelegationsResponse](#alliance.alliance.QueryAlliancesDelegationsResponse)
+    - [QueryAlliancesRequest](#alliance.alliance.QueryAlliancesRequest)
+    - [QueryAlliancesResponse](#alliance.alliance.QueryAlliancesResponse)
+    - [QueryIBCAllianceDelegationRequest](#alliance.alliance.QueryIBCAllianceDelegationRequest)
+    - [QueryIBCAllianceDelegationRewardsRequest](#alliance.alliance.QueryIBCAllianceDelegationRewardsRequest)
+    - [QueryIBCAllianceRequest](#alliance.alliance.QueryIBCAllianceRequest)
+    - [QueryParamsRequest](#alliance.alliance.QueryParamsRequest)
+    - [QueryParamsResponse](#alliance.alliance.QueryParamsResponse)
   
-    - [Msg](#alliance.Msg)
+    - [Query](#alliance.alliance.Query)
+  
+- [alliance/alliance/tx.proto](#alliance/alliance/tx.proto)
+    - [MsgClaimDelegationRewards](#alliance.alliance.MsgClaimDelegationRewards)
+    - [MsgClaimDelegationRewardsResponse](#alliance.alliance.MsgClaimDelegationRewardsResponse)
+    - [MsgCreateAlliance](#alliance.alliance.MsgCreateAlliance)
+    - [MsgCreateAllianceResponse](#alliance.alliance.MsgCreateAllianceResponse)
+    - [MsgDelegate](#alliance.alliance.MsgDelegate)
+    - [MsgDelegateResponse](#alliance.alliance.MsgDelegateResponse)
+    - [MsgDeleteAlliance](#alliance.alliance.MsgDeleteAlliance)
+    - [MsgDeleteAllianceResponse](#alliance.alliance.MsgDeleteAllianceResponse)
+    - [MsgRedelegate](#alliance.alliance.MsgRedelegate)
+    - [MsgRedelegateResponse](#alliance.alliance.MsgRedelegateResponse)
+    - [MsgUndelegate](#alliance.alliance.MsgUndelegate)
+    - [MsgUndelegateResponse](#alliance.alliance.MsgUndelegateResponse)
+    - [MsgUpdateAlliance](#alliance.alliance.MsgUpdateAlliance)
+    - [MsgUpdateAllianceResponse](#alliance.alliance.MsgUpdateAllianceResponse)
+    - [MsgUpdateParams](#alliance.alliance.MsgUpdateParams)
+    - [MsgUpdateParamsResponse](#alliance.alliance.MsgUpdateParamsResponse)
+  
+    - [Msg](#alliance.alliance.Msg)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="alliance/params.proto"></a>
+<a name="alliance/alliance/params.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/params.proto
+## alliance/alliance/params.proto
 
 
 
-<a name="alliance.Params"></a>
+<a name="alliance.alliance.Params"></a>
 
 ### Params
 
@@ -106,7 +127,7 @@
 
 
 
-<a name="alliance.RewardHistory"></a>
+<a name="alliance.alliance.RewardHistory"></a>
 
 ### RewardHistory
 
@@ -131,14 +152,14 @@
 
 
 
-<a name="alliance/alliance.proto"></a>
+<a name="alliance/alliance/alliance.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/alliance.proto
+## alliance/alliance/alliance.proto
 
 
 
-<a name="alliance.AllianceAsset"></a>
+<a name="alliance.alliance.AllianceAsset"></a>
 
 ### AllianceAsset
 key: denom value: AllianceAsset
@@ -155,7 +176,7 @@ key: denom value: AllianceAsset
 | `reward_change_rate` | [string](#string) |  |  |
 | `reward_change_interval` | [google.protobuf.Duration](#google.protobuf.Duration) |  |  |
 | `last_reward_change_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| `reward_weight_range` | [RewardWeightRange](#alliance.RewardWeightRange) |  | set a bound of weight range to limit how much reward weights can scale. |
+| `reward_weight_range` | [RewardWeightRange](#alliance.alliance.RewardWeightRange) |  | set a bound of weight range to limit how much reward weights can scale. |
 | `is_initialized` | [bool](#bool) |  | flag to check if an asset has completed the initialization process after the reward delay |
 
 
@@ -163,7 +184,7 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.RewardWeightChangeSnapshot"></a>
+<a name="alliance.alliance.RewardWeightChangeSnapshot"></a>
 
 ### RewardWeightChangeSnapshot
 
@@ -172,14 +193,14 @@ key: denom value: AllianceAsset
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `prev_reward_weight` | [string](#string) |  |  |
-| `reward_histories` | [RewardHistory](#alliance.RewardHistory) | repeated |  |
+| `reward_histories` | [RewardHistory](#alliance.alliance.RewardHistory) | repeated |  |
 
 
 
 
 
 
-<a name="alliance.RewardWeightRange"></a>
+<a name="alliance.alliance.RewardWeightRange"></a>
 
 ### RewardWeightRange
 
@@ -204,14 +225,14 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance/delegations.proto"></a>
+<a name="alliance/alliance/delegations.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/delegations.proto
+## alliance/alliance/delegations.proto
 
 
 
-<a name="alliance.AllianceValidatorInfo"></a>
+<a name="alliance.alliance.AllianceValidatorInfo"></a>
 
 ### AllianceValidatorInfo
 
@@ -219,7 +240,7 @@ key: denom value: AllianceAsset
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `global_reward_history` | [RewardHistory](#alliance.RewardHistory) | repeated |  |
+| `global_reward_history` | [RewardHistory](#alliance.alliance.RewardHistory) | repeated |  |
 | `total_delegator_shares` | [cosmos.base.v1beta1.DecCoin](#cosmos.base.v1beta1.DecCoin) | repeated |  |
 | `validator_shares` | [cosmos.base.v1beta1.DecCoin](#cosmos.base.v1beta1.DecCoin) | repeated |  |
 
@@ -228,7 +249,7 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.Delegation"></a>
+<a name="alliance.alliance.Delegation"></a>
 
 ### Delegation
 
@@ -240,7 +261,7 @@ key: denom value: AllianceAsset
 | `validator_address` | [string](#string) |  | validator_address is the bech32-encoded address of the validator. |
 | `denom` | [string](#string) |  | denom of token staked |
 | `shares` | [string](#string) |  | shares define the delegation shares received. |
-| `reward_history` | [RewardHistory](#alliance.RewardHistory) | repeated |  |
+| `reward_history` | [RewardHistory](#alliance.alliance.RewardHistory) | repeated |  |
 | `last_reward_claim_height` | [uint64](#uint64) |  |  |
 
 
@@ -248,22 +269,7 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.QueuedRedelegation"></a>
-
-### QueuedRedelegation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| `entries` | [Redelegation](#alliance.Redelegation) | repeated |  |
-
-
-
-
-
-
-<a name="alliance.QueuedUndelegation"></a>
+<a name="alliance.alliance.QueuedUndelegation"></a>
 
 ### QueuedUndelegation
 
@@ -271,32 +277,14 @@ key: denom value: AllianceAsset
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `entries` | [Undelegation](#alliance.Undelegation) | repeated |  |
+| `entries` | [Undelegation](#alliance.alliance.Undelegation) | repeated |  |
 
 
 
 
 
 
-<a name="alliance.Redelegation"></a>
-
-### Redelegation
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| `delegator_address` | [string](#string) |  |  |
-| `src_validator_address` | [string](#string) |  |  |
-| `dst_validator_address` | [string](#string) |  |  |
-| `balance` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) |  |  |
-
-
-
-
-
-
-<a name="alliance.Undelegation"></a>
+<a name="alliance.alliance.Undelegation"></a>
 
 ### Undelegation
 
@@ -322,14 +310,14 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance/events.proto"></a>
+<a name="alliance/alliance/events.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/events.proto
+## alliance/alliance/events.proto
 
 
 
-<a name="alliance.ClaimAllianceRewardsEvent"></a>
+<a name="alliance.alliance.ClaimAllianceRewardsEvent"></a>
 
 ### ClaimAllianceRewardsEvent
 
@@ -346,7 +334,22 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.DelegateAllianceEvent"></a>
+<a name="alliance.alliance.DeductAllianceAssetsEvent"></a>
+
+### DeductAllianceAssetsEvent
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `coins` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) | repeated |  |
+
+
+
+
+
+
+<a name="alliance.alliance.DelegateAllianceEvent"></a>
 
 ### DelegateAllianceEvent
 
@@ -364,7 +367,7 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.RedelegateAllianceEvent"></a>
+<a name="alliance.alliance.RedelegateAllianceEvent"></a>
 
 ### RedelegateAllianceEvent
 
@@ -383,7 +386,7 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance.UndelegateAllianceEvent"></a>
+<a name="alliance.alliance.UndelegateAllianceEvent"></a>
 
 ### UndelegateAllianceEvent
 
@@ -410,94 +413,59 @@ key: denom value: AllianceAsset
 
 
 
-<a name="alliance/genesis.proto"></a>
+<a name="alliance/alliance/redelegations.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/genesis.proto
+## alliance/alliance/redelegations.proto
 
 
 
-<a name="alliance.GenesisState"></a>
+<a name="alliance.alliance.QueuedRedelegation"></a>
 
-### GenesisState
-GenesisState defines the module's genesis state.
+### QueuedRedelegation
+Used internally to keep track of redelegations
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#alliance.Params) |  |  |
-| `assets` | [AllianceAsset](#alliance.AllianceAsset) | repeated |  |
-| `validator_infos` | [ValidatorInfoState](#alliance.ValidatorInfoState) | repeated |  |
-| `reward_weight_change_snaphots` | [RewardWeightChangeSnapshotState](#alliance.RewardWeightChangeSnapshotState) | repeated |  |
-| `delegations` | [Delegation](#alliance.Delegation) | repeated |  |
-| `redelegations` | [RedelegationState](#alliance.RedelegationState) | repeated |  |
-| `undelegations` | [UndelegationState](#alliance.UndelegationState) | repeated |  |
+| `entries` | [Redelegation](#alliance.alliance.Redelegation) | repeated |  |
 
 
 
 
 
 
-<a name="alliance.RedelegationState"></a>
+<a name="alliance.alliance.Redelegation"></a>
 
-### RedelegationState
+### Redelegation
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| `redelegation` | [Redelegation](#alliance.Redelegation) |  |  |
+| `delegator_address` | [string](#string) |  | internal or external user address |
+| `src_validator_address` | [string](#string) |  | redelegation source validator |
+| `dst_validator_address` | [string](#string) |  | redelegation destination validator |
+| `balance` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) |  | amount to redelegate |
 
 
 
 
 
 
-<a name="alliance.RewardWeightChangeSnapshotState"></a>
+<a name="alliance.alliance.RedelegationEntry"></a>
 
-### RewardWeightChangeSnapshotState
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| `height` | [uint64](#uint64) |  |  |
-| `validator` | [string](#string) |  |  |
-| `denom` | [string](#string) |  |  |
-| `snapshot` | [RewardWeightChangeSnapshot](#alliance.RewardWeightChangeSnapshot) |  |  |
-
-
-
-
-
-
-<a name="alliance.UndelegationState"></a>
-
-### UndelegationState
-
+### RedelegationEntry
+Used on QueryServer
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
-| `undelegation` | [QueuedUndelegation](#alliance.QueuedUndelegation) |  |  |
-
-
-
-
-
-
-<a name="alliance.ValidatorInfoState"></a>
-
-### ValidatorInfoState
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| `validator_address` | [string](#string) |  |  |
-| `validator` | [AllianceValidatorInfo](#alliance.AllianceValidatorInfo) |  |  |
+| `delegator_address` | [string](#string) |  | internal or external user address |
+| `src_validator_address` | [string](#string) |  | redelegation source validator |
+| `dst_validator_address` | [string](#string) |  | redelegation destination validator |
+| `balance` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) |  | amount to redelegate |
+| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | completion_time defines the unix time for redelegation completion. |
 
 
 
@@ -513,14 +481,117 @@ GenesisState defines the module's genesis state.
 
 
 
-<a name="alliance/gov.proto"></a>
+<a name="alliance/alliance/genesis.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/gov.proto
+## alliance/alliance/genesis.proto
 
 
 
-<a name="alliance.MsgCreateAllianceProposal"></a>
+<a name="alliance.alliance.GenesisState"></a>
+
+### GenesisState
+GenesisState defines the module's genesis state.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `params` | [Params](#alliance.alliance.Params) |  |  |
+| `assets` | [AllianceAsset](#alliance.alliance.AllianceAsset) | repeated |  |
+| `validator_infos` | [ValidatorInfoState](#alliance.alliance.ValidatorInfoState) | repeated |  |
+| `reward_weight_change_snaphots` | [RewardWeightChangeSnapshotState](#alliance.alliance.RewardWeightChangeSnapshotState) | repeated |  |
+| `delegations` | [Delegation](#alliance.alliance.Delegation) | repeated |  |
+| `redelegations` | [RedelegationState](#alliance.alliance.RedelegationState) | repeated |  |
+| `undelegations` | [UndelegationState](#alliance.alliance.UndelegationState) | repeated |  |
+
+
+
+
+
+
+<a name="alliance.alliance.RedelegationState"></a>
+
+### RedelegationState
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| `redelegation` | [Redelegation](#alliance.alliance.Redelegation) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.RewardWeightChangeSnapshotState"></a>
+
+### RewardWeightChangeSnapshotState
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `height` | [uint64](#uint64) |  |  |
+| `validator` | [string](#string) |  |  |
+| `denom` | [string](#string) |  |  |
+| `snapshot` | [RewardWeightChangeSnapshot](#alliance.alliance.RewardWeightChangeSnapshot) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.UndelegationState"></a>
+
+### UndelegationState
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  |  |
+| `undelegation` | [QueuedUndelegation](#alliance.alliance.QueuedUndelegation) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.ValidatorInfoState"></a>
+
+### ValidatorInfoState
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `validator_address` | [string](#string) |  |  |
+| `validator` | [AllianceValidatorInfo](#alliance.alliance.AllianceValidatorInfo) |  |  |
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="alliance/alliance/gov.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## alliance/alliance/gov.proto
+
+
+
+<a name="alliance.alliance.MsgCreateAllianceProposal"></a>
 
 ### MsgCreateAllianceProposal
 
@@ -535,14 +606,14 @@ GenesisState defines the module's genesis state.
 | `take_rate` | [string](#string) |  | A positive take rate is used for liquid staking derivatives. It defines an annualized reward rate that will be redirected to the distribution rewards pool |
 | `reward_change_rate` | [string](#string) |  |  |
 | `reward_change_interval` | [google.protobuf.Duration](#google.protobuf.Duration) |  |  |
-| `reward_weight_range` | [RewardWeightRange](#alliance.RewardWeightRange) |  | set a bound of weight range to limit how much reward weights can scale. |
+| `reward_weight_range` | [RewardWeightRange](#alliance.alliance.RewardWeightRange) |  | set a bound of weight range to limit how much reward weights can scale. |
 
 
 
 
 
 
-<a name="alliance.MsgDeleteAllianceProposal"></a>
+<a name="alliance.alliance.MsgDeleteAllianceProposal"></a>
 
 ### MsgDeleteAllianceProposal
 
@@ -559,7 +630,7 @@ GenesisState defines the module's genesis state.
 
 
 
-<a name="alliance.MsgUpdateAllianceProposal"></a>
+<a name="alliance.alliance.MsgUpdateAllianceProposal"></a>
 
 ### MsgUpdateAllianceProposal
 
@@ -589,14 +660,47 @@ GenesisState defines the module's genesis state.
 
 
 
-<a name="alliance/query.proto"></a>
+<a name="alliance/alliance/unbonding.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/query.proto
+## alliance/alliance/unbonding.proto
 
 
 
-<a name="alliance.DelegationResponse"></a>
+<a name="alliance.alliance.UnbondingDelegation"></a>
+
+### UnbondingDelegation
+UnbondingDelegation defines an unbonding object with relevant metadata.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `completion_time` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | completion_time is the unix time for unbonding completion. |
+| `validator_address` | [string](#string) |  | validator_address is the bech32-encoded address of the validator. |
+| `amount` | [string](#string) |  | amount defines the tokens to receive at completion. |
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="alliance/alliance/query.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## alliance/alliance/query.proto
+
+
+
+<a name="alliance.alliance.DelegationResponse"></a>
 
 ### DelegationResponse
 DelegationResponse is equivalent to Delegation except that it contains a
@@ -605,7 +709,7 @@ balance in addition to shares which is more suitable for client responses.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `delegation` | [Delegation](#alliance.Delegation) |  |  |
+| `delegation` | [Delegation](#alliance.alliance.Delegation) |  |  |
 | `balance` | [cosmos.base.v1beta1.Coin](#cosmos.base.v1beta1.Coin) |  |  |
 
 
@@ -613,7 +717,7 @@ balance in addition to shares which is more suitable for client responses.
 
 
 
-<a name="alliance.QueryAllAllianceValidatorsRequest"></a>
+<a name="alliance.alliance.QueryAllAllianceValidatorsRequest"></a>
 
 ### QueryAllAllianceValidatorsRequest
 
@@ -628,7 +732,7 @@ balance in addition to shares which is more suitable for client responses.
 
 
 
-<a name="alliance.QueryAllAlliancesDelegationsRequest"></a>
+<a name="alliance.alliance.QueryAllAlliancesDelegationsRequest"></a>
 
 ### QueryAllAlliancesDelegationsRequest
 
@@ -643,7 +747,7 @@ balance in addition to shares which is more suitable for client responses.
 
 
 
-<a name="alliance.QueryAllianceDelegationRequest"></a>
+<a name="alliance.alliance.QueryAllianceDelegationRequest"></a>
 
 ### QueryAllianceDelegationRequest
 AllianceDelegation
@@ -661,7 +765,7 @@ AllianceDelegation
 
 
 
-<a name="alliance.QueryAllianceDelegationResponse"></a>
+<a name="alliance.alliance.QueryAllianceDelegationResponse"></a>
 
 ### QueryAllianceDelegationResponse
 
@@ -669,14 +773,14 @@ AllianceDelegation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `delegation` | [DelegationResponse](#alliance.DelegationResponse) |  |  |
+| `delegation` | [DelegationResponse](#alliance.alliance.DelegationResponse) |  |  |
 
 
 
 
 
 
-<a name="alliance.QueryAllianceDelegationRewardsRequest"></a>
+<a name="alliance.alliance.QueryAllianceDelegationRewardsRequest"></a>
 
 ### QueryAllianceDelegationRewardsRequest
 AllianceDelegation
@@ -694,7 +798,7 @@ AllianceDelegation
 
 
 
-<a name="alliance.QueryAllianceDelegationRewardsResponse"></a>
+<a name="alliance.alliance.QueryAllianceDelegationRewardsResponse"></a>
 
 ### QueryAllianceDelegationRewardsResponse
 
@@ -709,7 +813,40 @@ AllianceDelegation
 
 
 
-<a name="alliance.QueryAllianceRequest"></a>
+<a name="alliance.alliance.QueryAllianceRedelegationsRequest"></a>
+
+### QueryAllianceRedelegationsRequest
+Redelegations
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `denom` | [string](#string) |  |  |
+| `delegator_addr` | [string](#string) |  |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageRequest](#cosmos.base.query.v1beta1.PageRequest) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceRedelegationsResponse"></a>
+
+### QueryAllianceRedelegationsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `redelegations` | [RedelegationEntry](#alliance.alliance.RedelegationEntry) | repeated |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceRequest"></a>
 
 ### QueryAllianceRequest
 Alliance
@@ -724,7 +861,7 @@ Alliance
 
 
 
-<a name="alliance.QueryAllianceResponse"></a>
+<a name="alliance.alliance.QueryAllianceResponse"></a>
 
 ### QueryAllianceResponse
 
@@ -732,14 +869,81 @@ Alliance
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `alliance` | [AllianceAsset](#alliance.AllianceAsset) |  |  |
+| `alliance` | [AllianceAsset](#alliance.alliance.AllianceAsset) |  |  |
 
 
 
 
 
 
-<a name="alliance.QueryAllianceValidatorRequest"></a>
+<a name="alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorRequest"></a>
+
+### QueryAllianceUnbondingsByDenomAndDelegatorRequest
+AllianceDelegation
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `denom` | [string](#string) |  |  |
+| `delegator_addr` | [string](#string) |  |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageRequest](#cosmos.base.query.v1beta1.PageRequest) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorResponse"></a>
+
+### QueryAllianceUnbondingsByDenomAndDelegatorResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `unbondings` | [UnbondingDelegation](#alliance.alliance.UnbondingDelegation) | repeated |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceUnbondingsRequest"></a>
+
+### QueryAllianceUnbondingsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `denom` | [string](#string) |  |  |
+| `delegator_addr` | [string](#string) |  |  |
+| `validator_addr` | [string](#string) |  |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageRequest](#cosmos.base.query.v1beta1.PageRequest) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceUnbondingsResponse"></a>
+
+### QueryAllianceUnbondingsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `unbondings` | [UnbondingDelegation](#alliance.alliance.UnbondingDelegation) | repeated |  |
+| `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.QueryAllianceValidatorRequest"></a>
 
 ### QueryAllianceValidatorRequest
 
@@ -754,7 +958,7 @@ Alliance
 
 
 
-<a name="alliance.QueryAllianceValidatorResponse"></a>
+<a name="alliance.alliance.QueryAllianceValidatorResponse"></a>
 
 ### QueryAllianceValidatorResponse
 
@@ -772,7 +976,7 @@ Alliance
 
 
 
-<a name="alliance.QueryAllianceValidatorsResponse"></a>
+<a name="alliance.alliance.QueryAllianceValidatorsResponse"></a>
 
 ### QueryAllianceValidatorsResponse
 
@@ -780,7 +984,7 @@ Alliance
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `validators` | [QueryAllianceValidatorResponse](#alliance.QueryAllianceValidatorResponse) | repeated |  |
+| `validators` | [QueryAllianceValidatorResponse](#alliance.alliance.QueryAllianceValidatorResponse) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -788,7 +992,7 @@ Alliance
 
 
 
-<a name="alliance.QueryAlliancesDelegationByValidatorRequest"></a>
+<a name="alliance.alliance.QueryAlliancesDelegationByValidatorRequest"></a>
 
 ### QueryAlliancesDelegationByValidatorRequest
 AlliancesDelegationByValidator
@@ -805,7 +1009,7 @@ AlliancesDelegationByValidator
 
 
 
-<a name="alliance.QueryAlliancesDelegationsRequest"></a>
+<a name="alliance.alliance.QueryAlliancesDelegationsRequest"></a>
 
 ### QueryAlliancesDelegationsRequest
 AlliancesDelegation
@@ -821,7 +1025,7 @@ AlliancesDelegation
 
 
 
-<a name="alliance.QueryAlliancesDelegationsResponse"></a>
+<a name="alliance.alliance.QueryAlliancesDelegationsResponse"></a>
 
 ### QueryAlliancesDelegationsResponse
 
@@ -829,7 +1033,7 @@ AlliancesDelegation
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `delegations` | [DelegationResponse](#alliance.DelegationResponse) | repeated |  |
+| `delegations` | [DelegationResponse](#alliance.alliance.DelegationResponse) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -837,7 +1041,7 @@ AlliancesDelegation
 
 
 
-<a name="alliance.QueryAlliancesRequest"></a>
+<a name="alliance.alliance.QueryAlliancesRequest"></a>
 
 ### QueryAlliancesRequest
 Alliances
@@ -852,7 +1056,7 @@ Alliances
 
 
 
-<a name="alliance.QueryAlliancesResponse"></a>
+<a name="alliance.alliance.QueryAlliancesResponse"></a>
 
 ### QueryAlliancesResponse
 
@@ -860,7 +1064,7 @@ Alliances
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `alliances` | [AllianceAsset](#alliance.AllianceAsset) | repeated |  |
+| `alliances` | [AllianceAsset](#alliance.alliance.AllianceAsset) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -868,7 +1072,7 @@ Alliances
 
 
 
-<a name="alliance.QueryIBCAllianceDelegationRequest"></a>
+<a name="alliance.alliance.QueryIBCAllianceDelegationRequest"></a>
 
 ### QueryIBCAllianceDelegationRequest
 
@@ -886,7 +1090,7 @@ Alliances
 
 
 
-<a name="alliance.QueryIBCAllianceDelegationRewardsRequest"></a>
+<a name="alliance.alliance.QueryIBCAllianceDelegationRewardsRequest"></a>
 
 ### QueryIBCAllianceDelegationRewardsRequest
 
@@ -904,7 +1108,7 @@ Alliances
 
 
 
-<a name="alliance.QueryIBCAllianceRequest"></a>
+<a name="alliance.alliance.QueryIBCAllianceRequest"></a>
 
 ### QueryIBCAllianceRequest
 
@@ -919,7 +1123,7 @@ Alliances
 
 
 
-<a name="alliance.QueryParamsRequest"></a>
+<a name="alliance.alliance.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 Params
@@ -929,7 +1133,7 @@ Params
 
 
 
-<a name="alliance.QueryParamsResponse"></a>
+<a name="alliance.alliance.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 
@@ -937,7 +1141,7 @@ Params
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#alliance.Params) |  |  |
+| `params` | [Params](#alliance.alliance.Params) |  |  |
 
 
 
@@ -950,39 +1154,42 @@ Params
  <!-- end HasExtensions -->
 
 
-<a name="alliance.Query"></a>
+<a name="alliance.alliance.Query"></a>
 
 ### Query
 
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#alliance.QueryParamsRequest) | [QueryParamsResponse](#alliance.QueryParamsResponse) |  | GET|/terra/alliances/params|
-| `Alliances` | [QueryAlliancesRequest](#alliance.QueryAlliancesRequest) | [QueryAlliancesResponse](#alliance.QueryAlliancesResponse) | Query paginated alliances | GET|/terra/alliances|
-| `IBCAlliance` | [QueryIBCAllianceRequest](#alliance.QueryIBCAllianceRequest) | [QueryAllianceResponse](#alliance.QueryAllianceResponse) | Query a specific alliance by ibc hash @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/ibc%2Falliance | GET|/terra/alliances/ibc/{hash}|
-| `AllAlliancesDelegations` | [QueryAllAlliancesDelegationsRequest](#alliance.QueryAllAlliancesDelegationsRequest) | [QueryAlliancesDelegationsResponse](#alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations | GET|/terra/alliances/delegations|
-| `AllianceValidator` | [QueryAllianceValidatorRequest](#alliance.QueryAllianceValidatorRequest) | [QueryAllianceValidatorResponse](#alliance.QueryAllianceValidatorResponse) | Query alliance validator | GET|/terra/alliances/validators/{validator_addr}|
-| `AllAllianceValidators` | [QueryAllAllianceValidatorsRequest](#alliance.QueryAllAllianceValidatorsRequest) | [QueryAllianceValidatorsResponse](#alliance.QueryAllianceValidatorsResponse) | Query all paginated alliance validators | GET|/terra/alliances/validators|
-| `AlliancesDelegation` | [QueryAlliancesDelegationsRequest](#alliance.QueryAlliancesDelegationsRequest) | [QueryAlliancesDelegationsResponse](#alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations for a delegator addr | GET|/terra/alliances/delegations/{delegator_addr}|
-| `AlliancesDelegationByValidator` | [QueryAlliancesDelegationByValidatorRequest](#alliance.QueryAlliancesDelegationByValidatorRequest) | [QueryAlliancesDelegationsResponse](#alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations for a delegator addr and validator_addr | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}|
-| `AllianceDelegation` | [QueryAllianceDelegationRequest](#alliance.QueryAllianceDelegationRequest) | [QueryAllianceDelegationResponse](#alliance.QueryAllianceDelegationResponse) | Query a delegation to an alliance by delegator addr, validator_addr and denom | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}/{denom}|
-| `IBCAllianceDelegation` | [QueryIBCAllianceDelegationRequest](#alliance.QueryIBCAllianceDelegationRequest) | [QueryAllianceDelegationResponse](#alliance.QueryAllianceDelegationResponse) | Query a delegation to an alliance by delegator addr, validator_addr and denom @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/terradr1231/terravaloper41234/ibc%2Falliance | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}|
-| `AllianceDelegationRewards` | [QueryAllianceDelegationRewardsRequest](#alliance.QueryAllianceDelegationRewardsRequest) | [QueryAllianceDelegationRewardsResponse](#alliance.QueryAllianceDelegationRewardsResponse) | Query for rewards by delegator addr, validator_addr and denom | GET|/terra/alliances/rewards/{delegator_addr}/{validator_addr}/{denom}|
-| `IBCAllianceDelegationRewards` | [QueryIBCAllianceDelegationRewardsRequest](#alliance.QueryIBCAllianceDelegationRewardsRequest) | [QueryAllianceDelegationRewardsResponse](#alliance.QueryAllianceDelegationRewardsResponse) | Query for rewards by delegator addr, validator_addr and denom @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/terradr1231/terravaloper41234/ibc%2Falliance | GET|/terra/alliances/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}|
-| `Alliance` | [QueryAllianceRequest](#alliance.QueryAllianceRequest) | [QueryAllianceResponse](#alliance.QueryAllianceResponse) | Query a specific alliance by denom | GET|/terra/alliances/{denom}|
+| `Params` | [QueryParamsRequest](#alliance.alliance.QueryParamsRequest) | [QueryParamsResponse](#alliance.alliance.QueryParamsResponse) |  | GET|/terra/alliances/params|
+| `Alliances` | [QueryAlliancesRequest](#alliance.alliance.QueryAlliancesRequest) | [QueryAlliancesResponse](#alliance.alliance.QueryAlliancesResponse) | Query paginated alliances | GET|/terra/alliances|
+| `IBCAlliance` | [QueryIBCAllianceRequest](#alliance.alliance.QueryIBCAllianceRequest) | [QueryAllianceResponse](#alliance.alliance.QueryAllianceResponse) | Query a specific alliance by ibc hash @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/ibc%2Falliance | GET|/terra/alliances/ibc/{hash}|
+| `AllAlliancesDelegations` | [QueryAllAlliancesDelegationsRequest](#alliance.alliance.QueryAllAlliancesDelegationsRequest) | [QueryAlliancesDelegationsResponse](#alliance.alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations | GET|/terra/alliances/delegations|
+| `AllianceValidator` | [QueryAllianceValidatorRequest](#alliance.alliance.QueryAllianceValidatorRequest) | [QueryAllianceValidatorResponse](#alliance.alliance.QueryAllianceValidatorResponse) | Query alliance validator | GET|/terra/alliances/validators/{validator_addr}|
+| `AllAllianceValidators` | [QueryAllAllianceValidatorsRequest](#alliance.alliance.QueryAllAllianceValidatorsRequest) | [QueryAllianceValidatorsResponse](#alliance.alliance.QueryAllianceValidatorsResponse) | Query all paginated alliance validators | GET|/terra/alliances/validators|
+| `AlliancesDelegation` | [QueryAlliancesDelegationsRequest](#alliance.alliance.QueryAlliancesDelegationsRequest) | [QueryAlliancesDelegationsResponse](#alliance.alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations for a delegator addr | GET|/terra/alliances/delegations/{delegator_addr}|
+| `AlliancesDelegationByValidator` | [QueryAlliancesDelegationByValidatorRequest](#alliance.alliance.QueryAlliancesDelegationByValidatorRequest) | [QueryAlliancesDelegationsResponse](#alliance.alliance.QueryAlliancesDelegationsResponse) | Query all paginated alliance delegations for a delegator addr and validator_addr | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}|
+| `AllianceDelegation` | [QueryAllianceDelegationRequest](#alliance.alliance.QueryAllianceDelegationRequest) | [QueryAllianceDelegationResponse](#alliance.alliance.QueryAllianceDelegationResponse) | Query a delegation to an alliance by delegator addr, validator_addr and denom | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}/{denom}|
+| `IBCAllianceDelegation` | [QueryIBCAllianceDelegationRequest](#alliance.alliance.QueryIBCAllianceDelegationRequest) | [QueryAllianceDelegationResponse](#alliance.alliance.QueryAllianceDelegationResponse) | Query a delegation to an alliance by delegator addr, validator_addr and denom @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/terradr1231/terravaloper41234/ibc%2Falliance | GET|/terra/alliances/delegations/{delegator_addr}/{validator_addr}/ibc/{hash}|
+| `AllianceDelegationRewards` | [QueryAllianceDelegationRewardsRequest](#alliance.alliance.QueryAllianceDelegationRewardsRequest) | [QueryAllianceDelegationRewardsResponse](#alliance.alliance.QueryAllianceDelegationRewardsResponse) | Query for rewards by delegator addr, validator_addr and denom | GET|/terra/alliances/rewards/{delegator_addr}/{validator_addr}/{denom}|
+| `IBCAllianceDelegationRewards` | [QueryIBCAllianceDelegationRewardsRequest](#alliance.alliance.QueryIBCAllianceDelegationRewardsRequest) | [QueryAllianceDelegationRewardsResponse](#alliance.alliance.QueryAllianceDelegationRewardsResponse) | Query for rewards by delegator addr, validator_addr and denom @deprecated: this endpoint will be replaced for by the encoded version of the denom e.g.: GET:/terra/alliances/terradr1231/terravaloper41234/ibc%2Falliance | GET|/terra/alliances/rewards/{delegator_addr}/{validator_addr}/ibc/{hash}|
+| `AllianceUnbondingsByDenomAndDelegator` | [QueryAllianceUnbondingsByDenomAndDelegatorRequest](#alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorRequest) | [QueryAllianceUnbondingsByDenomAndDelegatorResponse](#alliance.alliance.QueryAllianceUnbondingsByDenomAndDelegatorResponse) | Query for rewards by delegator addr, validator_addr and denom | GET|/terra/alliances/unbondings/{denom}/{delegator_addr}|
+| `AllianceUnbondings` | [QueryAllianceUnbondingsRequest](#alliance.alliance.QueryAllianceUnbondingsRequest) | [QueryAllianceUnbondingsResponse](#alliance.alliance.QueryAllianceUnbondingsResponse) | Query for rewards by delegator addr, validator_addr and denom | GET|/terra/alliances/unbondings/{denom}/{delegator_addr}/{validator_addr}|
+| `AllianceRedelegations` | [QueryAllianceRedelegationsRequest](#alliance.alliance.QueryAllianceRedelegationsRequest) | [QueryAllianceRedelegationsResponse](#alliance.alliance.QueryAllianceRedelegationsResponse) | Query redelegations by denom and delegator address | GET|/terra/alliances/redelegations/{denom}/{delegator_addr}|
+| `Alliance` | [QueryAllianceRequest](#alliance.alliance.QueryAllianceRequest) | [QueryAllianceResponse](#alliance.alliance.QueryAllianceResponse) | Query a specific alliance by denom | GET|/terra/alliances/{denom}|
 
  <!-- end services -->
 
 
 
-<a name="alliance/tx.proto"></a>
+<a name="alliance/alliance/tx.proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## alliance/tx.proto
+## alliance/alliance/tx.proto
 
 
 
-<a name="alliance.MsgClaimDelegationRewards"></a>
+<a name="alliance.alliance.MsgClaimDelegationRewards"></a>
 
 ### MsgClaimDelegationRewards
 
@@ -999,7 +1206,7 @@ Params
 
 
 
-<a name="alliance.MsgClaimDelegationRewardsResponse"></a>
+<a name="alliance.alliance.MsgClaimDelegationRewardsResponse"></a>
 
 ### MsgClaimDelegationRewardsResponse
 
@@ -1009,7 +1216,38 @@ Params
 
 
 
-<a name="alliance.MsgDelegate"></a>
+<a name="alliance.alliance.MsgCreateAlliance"></a>
+
+### MsgCreateAlliance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `denom` | [string](#string) |  | Denom of the asset. It could either be a native token or an IBC token |
+| `reward_weight` | [string](#string) |  | The reward weight specifies the ratio of rewards that will be given to each alliance asset It does not need to sum to 1. rate = weight / total_weight Native asset is always assumed to have a weight of 1. |
+| `take_rate` | [string](#string) |  | A positive take rate is used for liquid staking derivatives. It defines an annualized reward rate that will be redirected to the distribution rewards pool |
+| `reward_change_rate` | [string](#string) |  |  |
+| `reward_change_interval` | [google.protobuf.Duration](#google.protobuf.Duration) |  |  |
+| `reward_weight_range` | [RewardWeightRange](#alliance.alliance.RewardWeightRange) |  | set a bound of weight range to limit how much reward weights can scale. |
+
+
+
+
+
+
+<a name="alliance.alliance.MsgCreateAllianceResponse"></a>
+
+### MsgCreateAllianceResponse
+
+
+
+
+
+
+
+<a name="alliance.alliance.MsgDelegate"></a>
 
 ### MsgDelegate
 
@@ -1026,7 +1264,7 @@ Params
 
 
 
-<a name="alliance.MsgDelegateResponse"></a>
+<a name="alliance.alliance.MsgDelegateResponse"></a>
 
 ### MsgDelegateResponse
 
@@ -1036,7 +1274,33 @@ Params
 
 
 
-<a name="alliance.MsgRedelegate"></a>
+<a name="alliance.alliance.MsgDeleteAlliance"></a>
+
+### MsgDeleteAlliance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `denom` | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.MsgDeleteAllianceResponse"></a>
+
+### MsgDeleteAllianceResponse
+
+
+
+
+
+
+
+<a name="alliance.alliance.MsgRedelegate"></a>
 
 ### MsgRedelegate
 
@@ -1054,7 +1318,7 @@ Params
 
 
 
-<a name="alliance.MsgRedelegateResponse"></a>
+<a name="alliance.alliance.MsgRedelegateResponse"></a>
 
 ### MsgRedelegateResponse
 
@@ -1064,7 +1328,7 @@ Params
 
 
 
-<a name="alliance.MsgUndelegate"></a>
+<a name="alliance.alliance.MsgUndelegate"></a>
 
 ### MsgUndelegate
 
@@ -1081,9 +1345,65 @@ Params
 
 
 
-<a name="alliance.MsgUndelegateResponse"></a>
+<a name="alliance.alliance.MsgUndelegateResponse"></a>
 
 ### MsgUndelegateResponse
+
+
+
+
+
+
+
+<a name="alliance.alliance.MsgUpdateAlliance"></a>
+
+### MsgUpdateAlliance
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `denom` | [string](#string) |  | Denom of the asset. It could either be a native token or an IBC token |
+| `reward_weight` | [string](#string) |  | The reward weight specifies the ratio of rewards that will be given to each alliance asset It does not need to sum to 1. rate = weight / total_weight Native asset is always assumed to have a weight of 1. |
+| `take_rate` | [string](#string) |  |  |
+| `reward_change_rate` | [string](#string) |  |  |
+| `reward_change_interval` | [google.protobuf.Duration](#google.protobuf.Duration) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.MsgUpdateAllianceResponse"></a>
+
+### MsgUpdateAllianceResponse
+
+
+
+
+
+
+
+<a name="alliance.alliance.MsgUpdateParams"></a>
+
+### MsgUpdateParams
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `params` | [Params](#alliance.alliance.Params) |  |  |
+
+
+
+
+
+
+<a name="alliance.alliance.MsgUpdateParamsResponse"></a>
+
+### MsgUpdateParamsResponse
 
 
 
@@ -1097,17 +1417,21 @@ Params
  <!-- end HasExtensions -->
 
 
-<a name="alliance.Msg"></a>
+<a name="alliance.alliance.Msg"></a>
 
 ### Msg
 
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Delegate` | [MsgDelegate](#alliance.MsgDelegate) | [MsgDelegateResponse](#alliance.MsgDelegateResponse) |  | |
-| `Redelegate` | [MsgRedelegate](#alliance.MsgRedelegate) | [MsgRedelegateResponse](#alliance.MsgRedelegateResponse) |  | |
-| `Undelegate` | [MsgUndelegate](#alliance.MsgUndelegate) | [MsgUndelegateResponse](#alliance.MsgUndelegateResponse) |  | |
-| `ClaimDelegationRewards` | [MsgClaimDelegationRewards](#alliance.MsgClaimDelegationRewards) | [MsgClaimDelegationRewardsResponse](#alliance.MsgClaimDelegationRewardsResponse) |  | |
+| `Delegate` | [MsgDelegate](#alliance.alliance.MsgDelegate) | [MsgDelegateResponse](#alliance.alliance.MsgDelegateResponse) |  | |
+| `Redelegate` | [MsgRedelegate](#alliance.alliance.MsgRedelegate) | [MsgRedelegateResponse](#alliance.alliance.MsgRedelegateResponse) |  | |
+| `Undelegate` | [MsgUndelegate](#alliance.alliance.MsgUndelegate) | [MsgUndelegateResponse](#alliance.alliance.MsgUndelegateResponse) |  | |
+| `ClaimDelegationRewards` | [MsgClaimDelegationRewards](#alliance.alliance.MsgClaimDelegationRewards) | [MsgClaimDelegationRewardsResponse](#alliance.alliance.MsgClaimDelegationRewardsResponse) |  | |
+| `UpdateParams` | [MsgUpdateParams](#alliance.alliance.MsgUpdateParams) | [MsgUpdateParamsResponse](#alliance.alliance.MsgUpdateParamsResponse) |  | |
+| `CreateAlliance` | [MsgCreateAlliance](#alliance.alliance.MsgCreateAlliance) | [MsgCreateAllianceResponse](#alliance.alliance.MsgCreateAllianceResponse) |  | |
+| `UpdateAlliance` | [MsgUpdateAlliance](#alliance.alliance.MsgUpdateAlliance) | [MsgUpdateAllianceResponse](#alliance.alliance.MsgUpdateAllianceResponse) |  | |
+| `DeleteAlliance` | [MsgDeleteAlliance](#alliance.alliance.MsgDeleteAlliance) | [MsgDeleteAllianceResponse](#alliance.alliance.MsgDeleteAllianceResponse) |  | |
 
  <!-- end services -->
 
