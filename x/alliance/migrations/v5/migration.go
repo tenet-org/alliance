@@ -11,7 +11,7 @@ import (
 func Migrate(k alliancekeeper.Keeper, subspace paramtypes.Subspace) func(ctx sdk.Context) error {
 	return func(ctx sdk.Context) error {
 		var params types.Params
-		subspace.GetParamSet(ctx, &params)
+		subspace.GetParamSetIfExists(ctx, &params)
 		return k.SetParams(ctx, params)
 	}
 }
