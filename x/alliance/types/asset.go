@@ -30,14 +30,14 @@ func ConvertNewTokenToShares(totalTokens sdk.Dec, totalShares sdk.Dec, newTokens
 	if totalShares.IsZero() {
 		return sdk.NewDecFromInt(newTokens)
 	}
-	return totalShares.Quo(totalTokens).MulInt(newTokens)
+	return totalShares.MulInt(newTokens).Quo(totalTokens)
 }
 
 func ConvertNewShareToDecToken(totalTokens sdk.Dec, totalShares sdk.Dec, shares sdk.Dec) (token sdk.Dec) {
 	if totalShares.IsZero() {
 		return totalTokens
 	}
-	return shares.Quo(totalShares).Mul(totalTokens)
+	return shares.Mul(totalTokens).Quo(totalShares)
 }
 
 func GetDelegationTokens(del Delegation, val AllianceValidator, asset AllianceAsset) sdk.Coin {
